@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FredWallCare | Professional Painting, Finishing & Construction Solutions in Lagos</title>
+  <meta name="description" content="FredWallCare delivers professional painting, interior finishing, decoration, and construction services for residential and commercial properties in Lagos, Nigeria.">
+  <meta name="keywords" content="Painting Lagos, Construction Nigeria, Decorators Lagos, Wall Care, Interior Finishing, Commercial Painting, Building Contractors">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="FredWallCare | Transforming Spaces. Building Better.">
+  <meta property="og:description" content="Premium painting, decoration, and construction services in Lagos, Nigeria. Crafted with quality workmanship and attention to detail.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================
+       DESIGN TOKENS & SYSTEM BASE
+       ========================================== */
+    :root {
+      /* Brand Palette - Modern Architectural */
+      --primary: #0F172A;        /* Slate 900 - Core Structure */
+      --primary-light: #1E293B;  /* Slate 800 */
+      --accent: #C59B27;         /* Warm Gold / Ochre - Craftsmanship Accent */
+      --accent-hover: #A37F1D;
+      --accent-soft: rgba(197, 155, 39, 0.12);
+      --secondary: #334155;      /* Slate 700 */
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      
+      --bg-body: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-dark: #090D16;
+      --border-light: #E2E8F0;
+      --border-dark: #334155;
+
+      /* Typography */
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Shadows & Elevations */
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.12);
+      --shadow-xl: 0 20px 40px -8px rgba(15, 23, 42, 0.18);
+
+      /* Transitions */
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Layout */
+      --max-width: 1280px;
+      --header-height: 80px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* Reset & Base Styling */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-padding {
+      padding: 6rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 4rem 0;
+      }
+    }
+
+    .text-center { text-align: center; }
+    .text-accent { color: var(--accent); }
+    .bg-dark-section {
+      background-color: var(--bg-dark);
+      color: #FFFFFF;
+    }
+    .bg-dark-section h1, 
+    .bg-dark-section h2, 
+    .bg-dark-section h3 {
+      color: #FFFFFF;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(197, 155, 39, 0.3);
+    }
+
+    .btn-dark {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+    .btn-dark:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      border-color: var(--border-light);
+      background-color: transparent;
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-outline-white {
+      border-color: rgba(255, 255, 255, 0.3);
+      background-color: transparent;
+      color: #FFFFFF;
+    }
+    .btn-outline-white:hover {
+      border-color: #FFFFFF;
+      background-color: #FFFFFF;
+      color: var(--primary);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .placeholder-tag {
+      display: inline-block;
+      background-color: #F1F5F9;
+      color: #64748B;
+      border: 1px dashed #CBD5E1;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Section Headings */
+    .section-header {
+      max-width: 720px;
+      margin: 0 auto 3.5rem auto;
+    }
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) {
+      .section-title { font-size: 2.75rem; }
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================
+       HEADER & NAVIGATION
+       ========================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 1000;
+      transition: var(--transition-fast);
+    }
+    
+    .header.scrolled {
+      height: 70px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+    .brand-logo .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--secondary);
+      position: relative;
+      padding: 0.5rem 0;
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span {
+      width: 100%;
+      height: 2.5px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: var(--transition-fast);
+    }
+
+    @media (max-width: 1024px) {
+      .hamburger { display: flex; }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 380px;
+        height: 100vh;
+        background-color: var(--bg-surface);
+        box-shadow: var(--shadow-xl);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 2.5rem 2.5rem 2.5rem;
+        gap: 1.5rem;
+        transition: var(--transition-smooth);
+        overflow-y: auto;
+      }
+      .nav-menu.open {
+        right: 0;
+      }
+      .hamburger.active span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+    }
+
+    /* Dynamic Page Switching Structure */
+    .page-view {
+      display: none;
+      min-height: calc(100vh - var(--header-height));
+      margin-top: var(--header-height);
+    }
+    .page-view.active-page {
+      display: block;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================
+       HOME PAGE SECTIONS
+       ========================================== */
+    
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 7rem 0 6rem 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.8) 100%), 
+                  url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+      color: #FFFFFF;
+      min-height: calc(90vh - var(--header-height));
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      max-width: 780px;
+    }
+    .hero h1 {
+      color: #FFFFFF;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #CBD5E1;
+      margin-bottom: 2.25rem;
+      max-width: 650px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Intro Section */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .intro-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .intro-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .intro-image-wrapper img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .intro-image-wrapper:hover img {
+      transform: scale(1.03);
+    }
+    .intro-experience-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background: var(--bg-surface);
+      padding: 1.25rem 1.75rem;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Services Preview Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(197, 155, 39, 0.4);
+    }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .service-link {
+      font-weight: 700;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    /* Why Choose Us */
+    .value-props-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .prop-card {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+    }
+    .prop-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* Featured Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: var(--transition-smooth);
+    }
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .project-thumb {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-thumb img {
+      transform: scale(1.05);
+    }
+    .project-type-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      color: #FFFFFF;
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .project-body {
+      padding: 1.5rem;
+    }
+    .project-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Before & After Interactive Component */
+    .ba-slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 450px;
+      margin: 2.5rem auto 0 auto;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      user-select: none;
+    }
+    .ba-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .ba-after {
+      z-index: 1;
+    }
+    .ba-before {
+      z-index: 2;
+      width: 50%;
+      border-right: 3px solid var(--accent);
+      overflow: hidden;
+    }
+    .ba-before .ba-inner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 900px; /* Matched to container max-width */
+      background-size: cover;
+      background-position: center;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 40px;
+      margin-left: -20px;
+      z-index: 10;
+      cursor: ew-resize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ba-handle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      font-size: 0.9rem;
+    }
+    .ba-label {
+      position: absolute;
+      bottom: 1rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(15, 23, 42, 0.75);
+      color: #FFF;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+      z-index: 5;
+    }
+    .ba-label-before { left: 1rem; }
+    .ba-label-after { right: 1rem; }
+
+    /* Testimonials & Verified Rating */
+    .testimonial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .rating-stars {
+      color: #F59E0B;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    /* Brand Logo Grid */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+    .brand-box {
+      border: 1px dashed var(--border-light);
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      color: var(--text-muted);
+      font-weight: 600;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90px;
+    }
+
+    /* B2B Callout Section */
+    .b2b-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ==========================================
+       FORMS & INPUTS
+       ========================================== */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      background-color: #FFFFFF;
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.15);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) {
+      .form-grid-2 { grid-template-columns: 1fr 1fr; }
+      .form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .notice-box {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      line-height: 1.4;
+    }
+
+    /* ==========================================
+       MODAL SYSTEM FOR PROJECT DETAILS
+       ========================================== */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-xl);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .footer {
+      background-color: var(--bg-dark);
+      color: #94A3B8;
+      padding: 5rem 0 2rem 0;
+      border-top: 1px solid #1E293B;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand h3 {
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    .footer-links h4 {
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+    }
+    .footer-links ul li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid #1E293B;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* Floating CTA / Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-fast);
+      z-index: 990;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVIGATION
+       ========================================== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" onclick="switchPage('home'); return false;">
+        <div class="logo-mark">F</div>
+        <span>FredWallCare</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a class="nav-link active" data-page="home" onclick="switchPage('home')">Home</a>
+        <a class="nav-link" data-page="about" onclick="switchPage('about')">About</a>
+        <a class="nav-link" data-page="services" onclick="switchPage('services')">Services</a>
+        <a class="nav-link" data-page="projects" onclick="switchPage('projects')">Projects</a>
+        <a class="nav-link" data-page="b2b" onclick="switchPage('b2b')">Developers & B2B</a>
+        <a class="nav-link" data-page="partners" onclick="switchPage('partners')">Partners</a>
+        <a class="nav-link" data-page="testimonials" onclick="switchPage('testimonials')">Testimonials</a>
+        <a class="nav-link" data-page="contact" onclick="switchPage('contact')">Contact</a>
+        <button class="btn btn-primary" onclick="switchPage('contact')">Request a Quote</button>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       PAGE: HOME
+       ========================================== -->
+  <main id="page-home" class="page-view active-page">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">Lagos, Nigeria</span>
+          <h1>Transforming Spaces.<br>Building Better.</h1>
+          <p>Professional painting, decoration, and construction solutions delivered with quality workmanship, attention to detail, and a commitment to client satisfaction.</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="switchPage('contact')">Request a Quote <i class="fa-solid => fa-arrow-right"></i></button>
+            <button class="btn btn-outline-white" onclick="switchPage('projects')">View Our Projects</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="intro-grid">
+          <div>
+            <span class="badge">Who We Are</span>
+            <h2 class="section-title">Professional Painting & Construction Solutions</h2>
+            <p>At FredWallCare, we transform spaces through professional painting, decoration, and construction services tailored to the specific structural and aesthetic needs of our clients.</p>
+            <p>From luxury residential properties in Lekki and Ikoyi to commercial complexes across Lagos, our team combines skilled workmanship, quality materials, and meticulous attention to detail to deliver results that make a lasting impression.</p>
+            <div style="margin-top: 1.5rem;">
+              <button class="btn btn-dark" onclick="switchPage('about')">Learn More About Us</button>
+            </div>
+          </div>
+          <div class="intro-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80" alt="FredWallCare Professional Finishing Work">
+            <div class="intro-experience-badge">
+              <div style="font-weight: 800; font-size: 1.25rem; color: var(--primary);">Craftsmanship & Precision</div>
+              <div style="font-size: 0.875rem; color: var(--text-muted);">Committed to Quality Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section-padding" style="background-color: #F1F5F9;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge">Our Core Expertise</span>
+          <h2 class="section-title">Services Overview</h2>
+          <p class="section-subtitle">Comprehensive interior and structural solutions for homes, businesses, and development projects.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
+            <h3>Painting & Decoration</h3>
+            <p>Professional interior and exterior painting, color consultation, protective coats, and decorative wall treatments.</p>
+            <a class="service-link" onclick="switchPage('services')">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+            <h3>Construction & Building</h3>
+            <p>Structural modifications, masonry, plasterwork, and specialized building construction support.</p>
+            <a class="service-link" onclick="switchPage('services')">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3>Finishing & Specialist Wall Finishes</h3>
+            <p>Textured coatings, stucco, feature walls, Venetian plastering, and custom architectural finishes.</p>
+            <a class="service-link" onclick="switchPage('services')">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Commercial & Project Services</h3>
+            <p>Large-scale support for real estate developers, commercial facilities, corporate offices, and hospitality venues.</p>
+            <a class="service-link" onclick="switchPage('b2b')">Learn More <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Before / After Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge">Visual Transformation</span>
+          <h2 class="section-title">Before & After Craftsmanship</h2>
+          <p class="section-subtitle">Drag the slider horizontally to view how our surface preparation and finishing elevates residential and commercial spaces.</p>
+        </div>
+
+        <div class="ba-slider-container" id="baSlider">
+          <div class="ba-image ba-after" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80');">
+            <span class="ba-label ba-label-after">AFTER (Finished)</span>
+          </div>
+          <div class="ba-image ba-before" id="baBefore">
+            <div class="ba-inner-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80');"></div>
+            <span class="ba-label ba-label-before">BEFORE (Raw Work)</span>
+          </div>
+          <div class="ba-handle" id="baHandle">
+            <div class="ba-handle-btn"><i class="fa-solid fa-arrows-left-right"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Clients Choose Us -->
+    <section class="section-padding" style="background-color: var(--primary); color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge" style="background: rgba(197, 155, 39, 0.2);">Why FredWallCare</span>
+          <h2 class="section-title" style="color: #FFFFFF;">Standards That Set Us Apart</h2>
+          <p class="section-subtitle" style="color: #94A3B8;">We combine technical understanding of surface physics with modern aesthetics.</p>
+        </div>
+
+        <div class="value-props-grid">
+          <div class="prop-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <div class="prop-icon"><i class="fa-solid fa-user-check"></i></div>
+            <div>
+              <h3 style="color:#FFF; font-size: 1.15rem; margin-bottom: 0.4rem;">Professional Workmanship</h3>
+              <p style="color: #94A3B8; font-size: 0.9rem; margin:0;">Meticulous preparation and exact material application techniques.</p>
+            </div>
+          </div>
+
+          <div class="prop-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <div class="prop-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <h3 style="color:#FFF; font-size: 1.15rem; margin-bottom: 0.4rem;">Quality Materials</h3>
+              <p style="color: #94A3B8; font-size: 0.9rem; margin:0;">We utilize premium, weather-resistant paints and verified building supplies.</p>
+            </div>
+          </div>
+
+          <div class="prop-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <div class="prop-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h3 style="color:#FFF; font-size: 1.15rem; margin-bottom: 0.4rem;">Reliable Project Delivery</h3>
+              <p style="color: #94A3B8; font-size: 0.9rem; margin:0;">Strict adherence to timelines and transparent project scheduling.</p>
+            </div>
+          </div>
+
+          <div class="prop-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <div class="prop-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div>
+              <h3 style="color:#FFF; font-size: 1.15rem; margin-bottom: 0.4rem;">Residential & Commercial</h3>
+              <p style="color: #94A3B8; font-size: 0.9rem; margin:0;">Equipped to handle private homes as well as large corporate developments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B Callout Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="b2b-banner">
+          <div style="max-width: 680px; position: relative; z-index: 2;">
+            <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFF;">For Developers & Corporate Clients</span>
+            <h2 style="color: #FFF; font-size: 2.25rem; margin-bottom: 1rem;">Professional Project Solutions for Developers & Businesses</h2>
+            <p style="color: #CBD5E1; margin-bottom: 2rem;">Partner with FredWallCare for reliable subcontracting, commercial painting, surface preparation, and full finishing work on new builds or renovations.</p>
+            <button class="btn btn-primary" onclick="switchPage('b2b')">Discuss Your Project <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-padding text-center" style="background-color: var(--accent-soft);">
+      <div class="container">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Transform Your Space?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--secondary);">Tell us about your project and let's discuss how FredWallCare can deliver exceptional results.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="switchPage('contact')">Request a Quote</button>
+          <a href="https://wa.me/" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us <span class="placeholder-tag">[WHATSAPP NUMBER]</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: ABOUT
+       ========================================== -->
+  <main id="page-about" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">About FredWallCare</span>
+        <h1 class="section-title">Professional Craftsmanship. Quality Finishes. Reliable Service.</h1>
+        <p class="section-subtitle" style="color: #94A3B8; max-width: 750px; margin: 0 auto;">Dedicated to elevating residential and commercial spaces across Lagos through disciplined execution and technical precision.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="intro-grid">
+          <div>
+            <span class="badge">Our Story</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.25rem;">Building Trust Through Every Finish</h2>
+            <p>FredWallCare was established in Lagos, Nigeria, with a clear focus: to bring elevated professionalism, structural integrity, and exquisite finishing standard to painting and construction services.</p>
+            <p>Led by <span class="placeholder-tag">[FOUNDER NAME]</span> (<span class="placeholder-tag">[OFFICIAL TITLE]</span>), the company has grown steadily by upholding high workmanship standards and clear communication with property owners and project developers alike.</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);"><em>Formal company timeline and historical details will be populated upon official confirmation. <span class="placeholder-tag">[CONFIRMED COMPANY HISTORY]</span></em></p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1000&q=80" alt="FredWallCare Construction Site Supervision" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-padding" style="background-color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge">What We Stand For</span>
+          <h2 class="section-title">Our Core Principles</h2>
+        </div>
+
+        <div class="cards-grid">
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto;"><i class="fa-solid fa-award"></i></div>
+            <h3>Quality</h3>
+            <p>Uncompromising standards in surface preparation, paint grades, and structural materials.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto;"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Professionalism</h3>
+            <p>Clean work environments, polite site conduct, and clear contractual agreements.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto;"><i class="fa-solid fa-clock-check"></i></div>
+            <h3>Reliability</h3>
+            <p>Completing projects within agreed timeframes without sacrificing detail.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto;"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>Attention to Detail</h3>
+            <p>Crisp paint edges, smooth plastering, and seamless transitions throughout.</p>
+          </div>
+
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 1.5rem auto;"><i class="fa-solid fa-face-smile"></i></div>
+            <h3>Customer Satisfaction</h3>
+            <p>Active communication and thorough final inspections with every client.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="form-grid form-grid-2">
+          <div style="background: var(--primary); color: #FFF; padding: 3rem; border-radius: var(--radius-md);">
+            <span class="badge" style="background: rgba(197, 155, 39, 0.2);">Our Vision</span>
+            <h3 style="color:#FFF; font-size: 1.75rem; margin: 1rem 0;">Building a Respected Name</h3>
+            <p style="color: #CBD5E1; font-size: 1.1rem; line-height: 1.7;">"Build FredWallCare into a respected and trusted name in painting, decoration, and construction across Nigeria."</p>
+          </div>
+
+          <div style="background: #F1F5F9; padding: 3rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <span class="badge">Our Mission</span>
+            <h3 style="font-size: 1.75rem; margin: 1rem 0;">Delivering Purposeful Solutions</h3>
+            <p style="color: var(--secondary); font-size: 1.1rem; line-height: 1.7;">"Provide professional painting, decoration, and building solutions combining skilled workmanship, quality materials, and customer-focused service."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Placeholders -->
+    <section class="section-padding" style="background-color: #F8FAFC;">
+      <div class="container text-center">
+        <span class="badge">Our Team</span>
+        <h2 class="section-title">Skilled People. One Standard.</h2>
+        <p class="section-subtitle" style="margin-bottom: 3rem;">Our site engineers, master painters, and project managers follow rigorous internal standards.</p>
+
+        <div class="cards-grid">
+          <div class="service-card text-center">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--border-light); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--text-muted);"><i class="fa-solid fa-user"></i></div>
+            <h3><span class="placeholder-tag">[FOUNDER / MANAGING DIRECTOR]</span></h3>
+            <p><span class="placeholder-tag">[EXECUTIVE TITLE]</span></p>
+          </div>
+
+          <div class="service-card text-center">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--border-light); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--text-muted);"><i class="fa-solid fa-user-gear"></i></div>
+            <h3><span class="placeholder-tag">[PROJECT LEAD]</span></h3>
+            <p><span class="placeholder-tag">[SITE SUPERVISOR]</span></p>
+          </div>
+
+          <div class="service-card text-center">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--border-light); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--text-muted);"><i class="fa-solid fa-paint-roller"></i></div>
+            <h3><span class="placeholder-tag">[HEAD DECORATOR]</span></h3>
+            <p><span class="placeholder-tag">[MASTER FINISHER]</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: SERVICES
+       ========================================== -->
+  <main id="page-services" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">Comprehensive Capabilities</span>
+        <h1 class="section-title">Professional Solutions for Every Project</h1>
+        <p class="section-subtitle" style="color: #94A3B8; max-width: 700px; margin: 0 auto;">Tailored painting, decoration, and construction services designed for long-term durability and visual appeal.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Service Block 1 -->
+        <div style="margin-bottom: 5rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+            <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-paint-roller"></i></div>
+            <h2 style="font-size: 2rem;">Painting & Decoration</h2>
+          </div>
+          <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Full-scope surface coating for residential, commercial, and institutional structures. Proper surface cleaning, primer application, and flawless topcoats.</p>
+          
+          <div class="cards-grid">
+            <div class="prop-card">
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check text-accent"></i> Interior Painting</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Living areas, bedrooms, office interiors, ceiling coats, and trim woodwork.</p>
+              </div>
+            </div>
+            <div class="prop-card">
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check text-accent"></i> Exterior Painting</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Weather-resistant coatings engineered for West African tropical heat and rainfall.</p>
+              </div>
+            </div>
+            <div class="prop-card">
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check text-accent"></i> Surface Preparation & Repainting</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Sanding, crack sealing, damp-proofing, and restoration of aged surfaces.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Block 2 -->
+        <div style="margin-bottom: 5rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+            <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-house-chimney-window"></i></div>
+            <h2 style="font-size: 2rem;">Residential Painting</h2>
+          </div>
+          <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Elevating homes, duplexes, apartments, and estate villas with pristine color schemes and protective finishes.</p>
+          
+          <div style="background: #F8FAFC; border-radius: var(--radius-md); padding: 2rem; border: 1px solid var(--border-light);">
+            <h4 style="margin-bottom: 1rem;">Suitable Properties:</h4>
+            <div class="form-grid form-grid-3">
+              <div><i class="fa-solid fa-arrow-right text-accent"></i> Private Houses & Duplexes</div>
+              <div><i class="fa-solid fa-arrow-right text-accent"></i> Apartments & Condos</div>
+              <div><i class="fa-solid fa-arrow-right text-accent"></i> Residential Estates</div>
+              <div><i class="fa-solid fa-arrow-right text-accent"></i> Renovated Properties</div>
+              <div><i class="fa-solid fa-arrow-right text-accent"></i> New Residential Builds</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Block 3 -->
+        <div style="margin-bottom: 5rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+            <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-city"></i></div>
+            <h2 style="font-size: 2rem;">Commercial & Business Projects</h2>
+          </div>
+          <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Professional finishes engineered to create impressive, clean corporate environments for businesses and developers.</p>
+          
+          <div class="form-grid form-grid-2">
+            <div class="prop-card">
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Corporate & Retail</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Offices, financial halls, retail outlets, shopping complexes, and showrooms.</p>
+              </div>
+            </div>
+            <div class="prop-card">
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Hospitality & Institutions</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Hotels, restaurants, educational facilities, and health centers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Block 4 -->
+        <div style="margin-bottom: 5rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+            <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+            <h2 style="font-size: 2rem;">Decorative & Specialist Finishes</h2>
+          </div>
+          <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">Custom wall textures and artistic finishes that add character and luxury value to interior focal points.</p>
+          
+          <div class="cards-grid">
+            <div class="service-card">
+              <h3>Feature Walls</h3>
+              <p>Accent walls designed with contrasting tones, geometric patterns, or premium finishes.</p>
+            </div>
+            <div class="service-card">
+              <h3>Textured Coatings</h3>
+              <p>Stucco, trowel-on textured plastering, and weather-durable exterior textures.</p>
+            </div>
+            <div class="service-card">
+              <h3>Custom Murals & Art</h3>
+              <p>Hand-painted artistic murals or brand-specific wall art applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Workflow -->
+        <div style="background: var(--primary); color: #FFF; padding: 4rem 2rem; border-radius: var(--radius-lg);">
+          <div class="text-center" style="margin-bottom: 3rem;">
+            <span class="badge" style="background: rgba(197, 155, 39, 0.2);">Structured Delivery</span>
+            <h2 style="color: #FFF; font-size: 2.25rem;">Our 7-Step Project Process</h2>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">01</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Project Enquiry</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Initial contact and scope discussion.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">02</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Consultation</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Understanding aesthetic and structural goals.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">03</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Site Assessment</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">On-site wall testing & measurements.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">04</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Quotation</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Transparent BOQ and schedule.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">05</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Planning</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Material sourcing and site preparation.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">06</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Execution</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Skilled application under supervision.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: var(--radius-sm); border-top: 3px solid var(--accent);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">07</div>
+              <h4 style="color:#FFF; margin: 0.5rem 0;">Final Inspection</h4>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">Client walkthrough and sign-off.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: PROJECTS
+       ========================================== -->
+  <main id="page-projects" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">Portfolio</span>
+        <h1 class="section-title">Our Work — See What We Do</h1>
+        <p class="section-subtitle" style="color: #94A3B8; max-width: 700px; margin: 0 auto;">"Every project is an opportunity to transform a space, solve a problem, and deliver work clients can be proud of."</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Filter Controls -->
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+          <button class="btn btn-outline active-filter" data-filter="all" onclick="filterProjects('all', this)">All Projects</button>
+          <button class="btn btn-outline" data-filter="painting" onclick="filterProjects('painting', this)">Painting & Decoration</button>
+          <button class="btn btn-outline" data-filter="residential" onclick="filterProjects('residential', this)">Residential</button>
+          <button class="btn btn-outline" data-filter="commercial" onclick="filterProjects('commercial', this)">Commercial</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsContainer">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="residential painting">
+            <div class="project-thumb">
+              <span class="project-type-tag">Residential Painting</span>
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Lekki Villa Finishing">
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Lekki Phase 1, Lagos</span>
+              </div>
+              <h3 class="project-title">Private Villa Interior & Exterior Finishing</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Full surface smoothing, weather-shield exterior paint, and luxury interior feature wall accenting.</p>
+              <button class="btn btn-outline" style="width: 100%; font-size: 0.85rem;" onclick="openProjectModal('project1')">View Project Details</button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="commercial painting">
+            <div class="project-thumb">
+              <span class="project-type-tag">Commercial Space</span>
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Ikoyi Office Facility">
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span><i class="fa-solid fa-location-dot"></i> Victoria Island, Lagos</span>
+              </div>
+              <h3 class="project-title">Corporate Office Facility Repaint</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Multi-story office building coating with low-VOC interior paints and clean brand accents.</p>
+              <button class="btn btn-outline" style="width: 100%; font-size: 0.85rem;" onclick="openProjectModal('project2')">View Project Details</button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="residential">
+            <div class="project-thumb">
+              <span class="project-type-tag">Residential Renovation</span>
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Ikeja Residence">
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span><i class="fa-solid fa-location-dot"></i> GRA Ikeja, Lagos</span>
+              </div>
+              <h3 class="project-title">Duplex Restoration & Wall Care</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Damp treatment, crack remediation, and comprehensive modern recoating.</p>
+              <button class="btn btn-outline" style="width: 100%; font-size: 0.85rem;" onclick="openProjectModal('project3')">View Project Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: DEVELOPERS & BUSINESSES (B2B)
+       ========================================== -->
+  <main id="page-b2b" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">B2B & Subcontracting</span>
+        <h1 class="section-title">Professional Project Solutions for Developers & Businesses</h1>
+        <p class="section-subtitle" style="color: #94A3B8; max-width: 700px; margin: 0 auto;">A Reliable Partner for Your Next Development or Commercial Renovation.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="intro-grid" style="margin-bottom: 4rem;">
+          <div>
+            <span class="badge">Target Partners</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Who We Support</h2>
+            <ul style="line-height: 2; color: var(--secondary);">
+              <li><i class="fa-solid fa-check text-accent"></i> <strong>Property Developers:</strong> Finishing contractor support for multi-unit residential or commercial builds.</li>
+              <li><i class="fa-solid fa-check text-accent"></i> <strong>Real Estate Companies:</strong> Pre-sale and post-tenancy refurbishments.</li>
+              <li><i class="fa-solid fa-check text-accent"></i> <strong>Facility Managers:</strong> Scheduled repaint and wall maintenance programs.</li>
+              <li><i class="fa-solid fa-check text-accent"></i> <strong>Main Contractors:</strong> Specialized sub-contracted wall painting and decorative finishing teams.</li>
+            </ul>
+          </div>
+          <div style="background: #F8FAFC; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <h3 style="margin-bottom: 1rem;">Why Partner With FredWallCare?</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div><strong>Experienced Workforce:</strong> Structured crew management for high-volume jobs.</div>
+              <div><strong>Quality Materials:</strong> Rigorous product specification ensuring long life cycles.</div>
+              <div><strong>Scalable Capacity:</strong> Ability to scale manpower based on construction deadlines.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B2B Assessment Form -->
+        <div style="background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg);" id="b2bFormContainer">
+          <div class="text-center" style="margin-bottom: 2.5rem;">
+            <span class="badge">B2B Portal</span>
+            <h2>Submit a Project Assessment Request</h2>
+            <p style="color: var(--text-muted);">Provide project specifics and our commercial team will prepare an initial assessment proposal.</p>
+          </div>
+
+          <form id="b2bForm" onsubmit="handleB2BSubmit(event)">
+            <div class="form-grid form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="b2bName">Full Name *</label>
+                <input type="text" id="b2bName" class="form-control" required placeholder="e.g. Arc. Oladipo Johnson">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="b2bCompany">Company Name *</label>
+                <input type="text" id="b2bCompany" class="form-control" required placeholder="e.g. Prime Heights Developments">
+              </div>
+            </div>
+
+            <div class="form-grid form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="b2bPhone">Phone / WhatsApp *</label>
+                <input type="tel" id="b2bPhone" class="form-control" required placeholder="e.g. +234 800 000 0000">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="b2bEmail">Official Email *</label>
+                <input type="email" id="b2bEmail" class="form-control" required placeholder="e.g. project@company.com">
+              </div>
+            </div>
+
+            <div class="form-grid form-grid-3">
+              <div class="form-group">
+                <label class="form-label" for="b2bType">Project Type</label>
+                <select id="b2bType" class="form-control">
+                  <option>Multi-Unit Residential Development</option>
+                  <option>Commercial Office Building</option>
+                  <option>Hospitality / Hotel Renovation</option>
+                  <option>Subcontract Painting Support</option>
+                  <option>Other Facility Maintenance</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="b2bLocation">Location in Lagos</label>
+                <input type="text" id="b2bLocation" class="form-control" placeholder="e.g. Lekki, Ikoyi, Victoria Island, Ikeja">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="b2bStartDate">Expected Start Date</label>
+                <input type="date" id="b2bStartDate" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="b2bDesc">Project Description & Scope</label>
+              <textarea id="b2bDesc" class="form-control" rows="4" placeholder="Detail wall surface area (sqm), number of units, required coating types, or architectural BOQ specs..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit B2B Project Enquiry</button>
+
+            <p class="notice-box text-center">By submitting this form, you agree that FredWallCare may use the information provided to respond to your enquiry.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: PARTNERS & BRANDS
+       ========================================== -->
+  <main id="page-partners" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">Material Standards</span>
+        <h1 class="section-title">Trusted Products. Professional Results.</h1>
+        <p class="section-subtitle" style="color: #94A3B8; max-width: 700px; margin: 0 auto;">The right products and materials support professional, durable finishes that withstand climate and time.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Featured Brand Note -->
+        <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 2.5rem; margin-bottom: 3rem; text-align: center;">
+          <span class="badge">Featured Brand Partnership</span>
+          <h3 style="margin-top: 0.5rem; margin-bottom: 1rem;">Dulux Nigeria</h3>
+          <p style="max-width: 650px; margin: 0 auto 1.5rem auto; color: var(--text-muted);">FredWallCare specifies premium paint brands known for durability and color fastness. Official brand relationship badges and confirmed distributor logos will be displayed upon formal authorization.</p>
+          <div><span class="placeholder-tag">[DULUX PARTNERSHIP STATUS: VERIFICATION PENDING]</span></div>
+        </div>
+
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h3>Verified Brand Network</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">A scalable grid for confirmed coating manufacturers and chemical suppliers.</p>
+        </div>
+
+        <div class="brand-grid">
+          <div class="brand-box"><span class="placeholder-tag">[VERIFIED BRAND LOGO]</span></div>
+          <div class="brand-box"><span class="placeholder-tag">[VERIFIED BRAND LOGO]</span></div>
+          <div class="brand-box"><span class="placeholder-tag">[VERIFIED BRAND LOGO]</span></div>
+          <div class="brand-box"><span class="placeholder-tag">[VERIFIED BRAND LOGO]</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: TESTIMONIALS
+       ========================================== -->
+  <main id="page-testimonials" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">Client Feedback</span>
+        <h1 class="section-title">Trusted by Our Clients</h1>
+        <p class="section-subtitle" style="color: #94A3B8;">The Work Speaks. Our Clients Confirm It.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Verified Review Note Area -->
+        <div style="background: #F1F5F9; border-radius: var(--radius-md); padding: 2rem; margin-bottom: 3rem; text-align: center;">
+          <i class="fa-brands fa-google" style="font-size: 2rem; color: #4285F4; margin-bottom: 0.5rem;"></i>
+          <h4>Google Rating & Review Metrics</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Google review integrations and verified client ratings will appear here once linked.</p>
+          <div style="margin-top: 1rem;"><span class="placeholder-tag">[VERIFIED GOOGLE RATING & REVIEW COUNT]</span></div>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Placeholders for genuine testimonials as per strictly stated instructions -->
+          <div class="testimonial-card">
+            <div class="rating-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p style="font-style: italic; color: var(--secondary);">"<span class="placeholder-tag">[CLIENT TESTIMONIAL TEXT]</span>"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <h4 style="font-size: 0.95rem;"><span class="placeholder-tag">[CLIENT NAME]</span></h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin:0;"><span class="placeholder-tag">[PROJECT LOCATION / TYPE]</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rating-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p style="font-style: italic; color: var(--secondary);">"<span class="placeholder-tag">[CLIENT TESTIMONIAL TEXT]</span>"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <h4 style="font-size: 0.95rem;"><span class="placeholder-tag">[CLIENT NAME]</span></h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin:0;"><span class="placeholder-tag">[PROJECT LOCATION / TYPE]</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Review Callout -->
+        <div style="margin-top: 4rem; text-align: center; background: var(--accent-soft); padding: 3rem; border-radius: var(--radius-md);">
+          <h3>Worked With Us Recently?</h3>
+          <p style="color: var(--secondary); margin-bottom: 1.5rem;">We value client feedback. Leave an official review on Google to share your experience with FredWallCare.</p>
+          <button class="btn btn-primary"><i class="fa-brands fa-google"></i> Leave a Google Review</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       PAGE: CONTACT / REQUEST A QUOTE
+       ========================================== -->
+  <main id="page-contact" class="page-view">
+    <section class="section-padding bg-dark-section">
+      <div class="container text-center">
+        <span class="badge">Get in Touch</span>
+        <h1 class="section-title">Let's Talk About Your Project</h1>
+        <p class="section-subtitle" style="color: #94A3B8;">Ready to transform your space? Request a quotation or contact our team directly.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="intro-grid" style="align-items: start;">
+          <!-- Contact Form -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-md);">
+            <h3 style="margin-bottom: 1.5rem;">Request a Project Quote</h3>
+
+            <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="qName">Full Name *</label>
+                <input type="text" id="qName" class="form-control" required placeholder="Enter your full name">
+              </div>
+
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="qPhone">Phone / WhatsApp *</label>
+                  <input type="tel" id="qPhone" class="form-control" required placeholder="e.g. 08012345678">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="qEmail">Email Address *</label>
+                  <input type="email" id="qEmail" class="form-control" required placeholder="name@example.com">
+                </div>
+              </div>
+
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="qService">Service Required</label>
+                  <select id="qService" class="form-control">
+                    <option>Painting & Decoration</option>
+                    <option>Residential Painting</option>
+                    <option>Commercial Painting</option>
+                    <option>Building & Construction</option>
+                    <option>Specialist Decorative Finishes</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="qLocation">Property Location in Lagos</label>
+                  <input type="text" id="qLocation" class="form-control" placeholder="e.g. Lekki Phase 1, Ikeja, Surulere">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="qDesc">Project Details</label>
+                <textarea id="qDesc" class="form-control" rows="4" placeholder="Briefly describe the project, condition of walls, timelines, or specific requirements..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Quote Request</button>
+
+              <p class="notice-box text-center">By submitting this form, you agree that FredWallCare may use the information provided to respond to your enquiry.</p>
+            </form>
+          </div>
+
+          <!-- Contact Options Sidebar -->
+          <div>
+            <div style="background: #F8FAFC; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 2rem; margin-bottom: 2rem;">
+              <h3 style="margin-bottom: 1.5rem;">Direct Channels</h3>
+
+              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                  <div style="color: var(--accent); font-size: 1.25rem;"><i class="fa-brands fa-whatsapp"></i></div>
+                  <div>
+                    <strong>WhatsApp Direct</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Chat directly with project supervisors.</p>
+                    <div style="margin-top: 0.25rem;"><span class="placeholder-tag">[WHATSAPP NUMBER]</span></div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                  <div style="color: var(--accent); font-size: 1.25rem;"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <strong>Phone Call</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Mon – Sat: 8:00 AM – 6:00 PM WAT</p>
+                    <div style="margin-top: 0.25rem;"><span class="placeholder-tag">[PHONE NUMBER]</span></div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                  <div style="color: var(--accent); font-size: 1.25rem;"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <strong>Email Enquiries</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">For BOQs and technical documentation.</p>
+                    <div style="margin-top: 0.25rem;"><span class="placeholder-tag">[EMAIL ADDRESS]</span></div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: start;">
+                  <div style="color: var(--accent); font-size: 1.25rem;"><i class="fa-solid fa-location-dot"></i></div>
+                  <div>
+                    <strong>Business Location</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin:0;">Lagos, Nigeria.</p>
+                    <div style="margin-top: 0.25rem;"><span class="placeholder-tag">[BUSINESS ADDRESS]</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Process Reminder -->
+            <div style="border: 1px dashed var(--border-light); padding: 1.5rem; border-radius: var(--radius-md);">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">What Happens Next?</h4>
+              <ol style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+                <li>Enquiry Received & Logged</li>
+                <li>Team Contacts You for Details</li>
+                <li>Site Visit / Plan Assessment</li>
+                <li>Transparent Quotation Issued</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       MODAL SYSTEM FOR PROJECT DETAILS
+       ========================================== -->
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      <div id="modalBody">
+        <!-- Content inserted dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>FredWallCare</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6;">Transforming spaces through professional painting, decoration, finishing, and construction solutions across Lagos, Nigeria.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a onclick="switchPage('home')">Home</a></li>
+            <li><a onclick="switchPage('about')">About Us</a></li>
+            <li><a onclick="switchPage('services')">Our Services</a></li>
+            <li><a onclick="switchPage('projects')">Portfolio Projects</a></li>
+            <li><a onclick="switchPage('b2b')">Developers & B2B</a></li>
+            <li><a onclick="switchPage('contact')">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a>Painting & Decoration</a></li>
+            <li><a>Residential Painting</a></li>
+            <li><a>Commercial Finishing</a></li>
+            <li><a>Building & Construction</a></li>
+            <li><a>Specialist Wall Finishes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contact & Info</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Phone: <span class="placeholder-tag">[PHONE NUMBER]</span></p>
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Email: <span class="placeholder-tag">[EMAIL ADDRESS]</span></p>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Location: Lagos, Nigeria</p>
+          <div style="display: flex; gap: 0.75rem;">
+            <span class="placeholder-tag">[SOCIAL PROFILES]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 FredWallCare. All Rights Reserved.</div>
+        <div>Designed with architectural clarity & accuracy.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+  <!-- ==========================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================== -->
+  <script>
+    /* ----------------------------------------------------
+       Navigation & Dynamic Page Router
+       ---------------------------------------------------- */
+    function switchPage(pageId) {
+      // Hide all page views
+      const pages = document.querySelectorAll('.page-view');
+      pages.forEach(page => page.classList.remove('active-page'));
+
+      // Show targeted page view
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      } else {
+        document.getElementById('page-home').classList.add('active-page');
+      }
+
+      // Update Nav Active States
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      // Close mobile menu if open
+      const navMenu = document.getElementById('navMenu');
+      const hamburger = document.getElementById('hamburgerBtn');
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Header Scroll Shadow State & Back To Top Visibility
+    const header = document.getElementById('header');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        backToTopBtn.classList.add('visible');
+      } else {
+        header.classList.remove('scrolled');
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mobile Hamburger Navigation
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      navMenu.classList.toggle('open');
+    });
+
+    /* ----------------------------------------------------
+       Interactive Before & After Image Comparison Slider
+       ---------------------------------------------------- */
+    const baSlider = document.getElementById('baSlider');
+    const baBefore = document.getElementById('baBefore');
+    const baHandle = document.getElementById('baHandle');
+
+    if (baSlider && baBefore && baHandle) {
+      let isDragging = false;
+
+      const setSliderPosition = (x) => {
+        const rect = baSlider.getBoundingClientRect();
+        let position = x - rect.left;
+        if (position < 0) position = 0;
+        if (position > rect.width) position = rect.width;
+        
+        const percentage = (position / rect.width) * 100;
+        baBefore.style.width = `${percentage}%`;
+        baHandle.style.left = `${percentage}%`;
+      };
+
+      // Mouse Events
+      baHandle.addEventListener('mousedown', () => { isDragging = true; });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        setSliderPosition(e.clientX);
+      });
+
+      // Touch Events for Mobile Accessibility
+      baHandle.addEventListener('touchstart', () => { isDragging = true; });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        if (e.touches.length > 0) {
+          setSliderPosition(e.touches[0].clientX);
+        }
+      });
+    }
+
+    /* ----------------------------------------------------
+       Projects Filter Logic
+       ---------------------------------------------------- */
+    function filterProjects(category, btn) {
+      const cards = document.querySelectorAll('#projectsContainer .project-card');
+      const filterBtns = btn.parentNode.querySelectorAll('.btn');
+      
+      filterBtns.forEach(b => b.classList.remove('active-filter'));
+      btn.classList.add('active-filter');
+
+      cards.forEach(card => {
+        const catData = card.getAttribute('data-category');
+        if (category === 'all' || catData.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* ----------------------------------------------------
+       Project Case Study Modal Data & Handlers
+       ---------------------------------------------------- */
+    const projectData = {
+      project1: {
+        title: "Private Villa Interior & Exterior Finishing",
+        location: "Lekki Phase 1, Lagos",
+        type: "Residential Painting & Finishing",
+        status: "Completed",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+        description: "Comprehensive surface restoration and premium architectural painting for a modern 5-bedroom detached villa.",
+        approach: "Our team conducted thorough damp testing and sanding to ensure a smooth base, followed by weather-resistant exterior coats and luxury interior acrylic paint.",
+        result: "Flawless surface texture and long-lasting protection against coastal humidity."
+      },
+      project2: {
+        title: "Corporate Office Facility Repaint",
+        location: "Victoria Island, Lagos",
+        type: "Commercial Painting",
+        status: "Completed",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
+        description: "Interior and exterior repaint of a commercial office block without disrupting daily corporate operations.",
+        approach: "Executed during off-peak weekend hours using low-odor, fast-drying commercial grade paints.",
+        result: "Modernized corporate visual branding and a clean work environment for office tenants."
+      },
+      project3: {
+        title: "Duplex Restoration & Wall Care",
+        location: "GRA Ikeja, Lagos",
+        type: "Residential Renovation",
+        status: "Completed",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
+        description: "Full restoration of exterior weathered walls and interior decorative touch-ups.",
+        approach: "Sealed hair-line cracks with flexible masonry filler and applied acrylic wall primer prior to color application.",
+        result: "Restored aesthetic appeal and upgraded property value."
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectData[key];
+      if (!data) return;
+
+      const modalBody = document.getElementById('modalBody');
+      modalBody.innerHTML = `
+        <img src="${data.image}" alt="${data.title}" style="width:100%; height:300px; object-fit:cover; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+        <span class="badge">${data.type}</span>
+        <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">${data.title}</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-location-dot"></i> ${data.location} | <strong>Status:</strong> ${data.status}</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+          <div><strong>The Scope:</strong> ${data.description}</div>
+          <div><strong>Our Approach:</strong> ${data.approach}</div>
+          <div><strong>The Result:</strong> ${data.result}</div>
+        </div>
+
+        <button class="btn btn-primary" onclick="closeProjectModal(); switchPage('contact');">Have a Similar Project? Request a Quote</button>
+      `;
+
+      document.getElementById('projectModal').classList.add('active');
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').classList.remove('active');
+    }
+
+    /* ----------------------------------------------------
+       Form Submission Handlers (Client-Side Simulation)
+       ---------------------------------------------------- */
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('quoteForm');
+      alert("Thank you! Your quote request has been received. A FredWallCare representative will contact you shortly.");
+      form.reset();
+    }
+
+    function handleB2BSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('b2bForm');
+      alert("Thank you! Your B2B project assessment enquiry has been logged. Our commercial team will review your details and respond.");
+      form.reset();
+    }
+  </script>
+</body>
+</html>
